@@ -10,8 +10,6 @@
 ### - Play music (This feature has not been implemented completely)
 
 
-
-
 ## Tech Stack:
 | Feature | Tech Stack used|
 | :-----: | :---: |
@@ -24,7 +22,9 @@
 | Open Apps          | AppOpener library                                   |
 | Time Functions     | geopy, timezonefinder library, API (www.timeapi.io) |
 
----
-| Attempt | #1    | #2    |
-| :-----: | :---: | :---: |
-| Seconds | 301   | 283   |
+
+### Hugging Face link to original model
+[microsoft/DialoGPT-medium](https://huggingface.co/microsoft/DialoGPT-medium)
+
+### Hugging Face link to finetuned model 
+[pyro-glitch/NEMO-DialoGPT-medium-model](https://huggingface.co/pyro-glitch/NEMO-DialoGPT-medium-model)
