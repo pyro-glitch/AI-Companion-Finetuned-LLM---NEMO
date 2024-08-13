@@ -13,14 +13,14 @@
 
 
 ## Tech Stack:
-### |FrontEnd|HTML, CSS, JS |
-### |Backend| Python, Ell framework( Connect Python to Js)|  
-### |LLM|Dialoge GPT by Microsoft|
-### |Store the model in the cloud|Hugging Face| 
-### |Text To Speech|pyttsx3 library|
-### |Speech to Text|speech_recognition library|
-### |Open Apps|AppOpener|
-### |Time Functions|geopy, timezonefinder library, API (www.timeapi.io)  |
+### | FrontEnd           | HTML, CSS, JS                                       |
+### | Backend            | Python, Ell framework( Connect Python to Js)        |  
+### | LLM Used           | Dialoge GPT by Microsoft                            |
+### | Store in the cloud | Hugging Face                                        | 
+### | Text To Speech     | pyttsx3 library                                     |
+### | Speech to Text     | speech_recognition library                          |
+### | Open Apps          | AppOpener library                                   |
+### | Time Functions     | geopy, timezonefinder library, API (www.timeapi.io) |
 
 ---
 | Attempt | #1    | #2    |
