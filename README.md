@@ -21,3 +21,8 @@
 ### |Speech to Text|speech_recognition library|
 ### |Open Apps|AppOpener|
 ### |Time Functions|geopy, timezonefinder library, API (www.timeapi.io)  |
+
+---
+| Attempt | #1    | #2    |
+| :-----: | :---: | :---: |
+| Seconds | 301   | 283   |
