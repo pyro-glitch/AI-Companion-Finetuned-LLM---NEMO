@@ -1,4 +1,4 @@
-# AI-Companion-Finetuned-LLM---NEMO
+# AI-Companion-Finetuned-LLM-NEMO
 
 ---
 
