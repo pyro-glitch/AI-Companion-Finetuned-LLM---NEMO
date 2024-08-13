@@ -13,6 +13,7 @@
 
 
 ## Tech Stack:
+| Feature | Tech Stack used|
 | :-----: | :---: |
 | FrontEnd           | HTML, CSS, JS                                       |
 | Backend            | Python, Ell framework( Connect Python to Js)        |  
