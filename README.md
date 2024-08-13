@@ -6,10 +6,10 @@
 
 ### The AI is enable with performing some basic tasks on the trigger of a wake word 'Nemo'. The number and types of tasks can be added as per need. As for the current time being the AI has the ability to following the following tasks:
 
-### - Searching the web for a query
-### - Open any app on the device
-### - Provide time of any location
-### - Play music (This feature has not been implemented completely)
+#### - Searching the web for a query
+#### - Open any app on the device
+#### - Provide time of any location
+#### - Play music (This feature has not been implemented completely)
 
 ---
 
