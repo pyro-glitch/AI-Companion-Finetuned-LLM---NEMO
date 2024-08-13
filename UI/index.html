@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NEMO</title>
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="/eel.js"></script>
+    <!-- <script type="text/javascript" src="main.js"></script> -->
+
+</head>
+
+<body>
+    <!-- name bar -->
+    <div id="titlebar">NEMO</div>
+    <br><br><br>
+    
+    <!--
+    <button onclick="addMessage('new message','sent')">Send</button>
+    <button onclick="addMessage('new message','recived')">Recive</button>
+    -->
+
+    <!-- Scroll -->
+    <div id="scroll">
+<!--        <div class="sent">I sent this message for testing a chatbot and creating its user interface</div>-->
+        <div class="recived">Hi I'm Nemo, you can talk with me.</div>
+    </div>
+
+    <div id="stopper"></div>
+
+    <!-- Text box -->
+    <div id="input">
+        <div id="popup"></div>
+        <div id="inputbox">
+            <input type="text" id="textbox">
+            <button id="button" onclick="clicked()">
+                <img src="images\direct.png" id="send-image" alt="">
+            </button>
+        </div>
+        
+    </div>
+    
+
+
+</body>
+
+
+<style>
+    :root{
+        --color1:#e38b29;
+        --color2:#f1a661;
+        --color3:#ffd8a9;
+        --color4:#fdeedc;
+    }
+
+    #titlebar{
+        position:fixed;
+        width:100%;
+        top: 0;
+        left: 0;
+        background-color: var(--color1);
+        color: var(--color4);
+        padding: 10px;
+        text-align: center;
+        font-size: x-large;
+    }
+    
+    #scroll{
+        width: 100%;   
+    }
+    
+    body{
+        background-color: var(--color3);
+        margin: 0;
+        overflow:visible;
+    }
+    
+    .sent{
+        background-color: var(--color4);
+        color: var(--color1);
+        border-radius: 15px 15px 0px 15px;
+        margin-left: auto;
+        margin-right: 5px;
+    }
+
+    .recived{
+        background-color: var(--color2);
+        color: var(--color4);
+        border-radius: 0px 15px 15px 15px;
+        margin-right: auto;
+        margin-left: 5px;
+    }
+
+    .sent, .recived{
+        width: fit-content;
+        font-size: large;
+        padding: 10px;
+        margin-bottom: 10px;
+        max-width: 75%;
+        overflow-wrap: break-word;
+    }
+
+    #input{
+        background-color: var(--color1);
+        vertical-align:middle;
+        position:fixed;
+        min-width: 100%;
+        max-width:100%;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        height:auto;
+    }
+
+    #inputbox{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #popup{
+        text-align: center;
+        color: var(--color4);
+    }
+
+    #textbox{
+        background-color: var(--color4);
+        color: var(--color1);
+        margin: 10px 5px 10px 10px;
+        padding: 10px;
+        border-radius: 25px;
+        border-width: 0px;
+        max-height: 50px;
+        flex-grow: 1;
+        font-size: x-large;
+    }
+
+    #button{
+        align-self: center;
+        background-color: var(--color4);
+        color: var(--color1);
+        margin: 10px 10px 10px 5px;
+        border-radius: 25px;
+        border-width: 0px;
+        height: 50px;
+        width: 50px;
+        /* min-width: 50px; */
+       
+    }
+
+    #send-image{
+        width: 30px;
+        height: auto;
+    }
+
+    #stopper{
+        height: 70px;
+        width: 100%;
+    }
+
+
+</style>
+
+<script>
+    const msgScroll = document.getElementById("scroll")
+    const stopper = document.getElementById("stopper")
+    const textbox = document.getElementById("textbox")
+    const popup = document.getElementById("popup")
+
+    const state= false;
+
+    textbox.addEventListener("keypress", (event)=>{
+        if(event.key=="Enter"){
+            clicked()
+        }
+    })
+
+    function addMessage(message, type){
+        if(message!=""){
+            msg=document.createElement("div")
+            msg.innerHTML=message
+            msg.classList.add(type)
+            msgScroll.appendChild(msg)
+            stopper.scrollIntoView()
+        }
+    }
+
+    function toast(msg){
+        popup.innerHTML="<h2>"+msg+"</h2>"
+    }
+
+    function clicked(){
+        input=textbox.value
+        popup.innerHTML=""
+
+        if(input!=""){
+            textbox.value=""
+            popup.innerHTML=""
+            addMessage(input, 'sent')
+            eel.chat(input)(function (response) {addMessage(response,'recived')})
+            popup.innerHTML=""
+        }
+        else{
+            toast("Listening...")
+            eel.getVoiceInput()(function (input) {
+                if(input=="#error"){
+                    addMessage("Sorry, I did not get that",'recived') 
+                }
+              
+            })
+            popup.innerHTML=""
+        }
+    }
+
+
+</script>
+</html>
+
+
+
+
+
+<!-- 
+    colors
+    purple    ddaaff, eeeeee,  
+    orange    ff8888
+
+    orginal 
+    purple 835bbf, bb66ff, dd99ee, ffddff 
+
+
+    orange e38b29, f1a661, ffd8a9, fdeedc
+    dark => light
+
+ -->
